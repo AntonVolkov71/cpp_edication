@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "E:/Edication/cpp_edication/test2/cmake-build-debug",
-		"source" : "E:/Edication/cpp_edication/test2"
+		"build" : "C:/Users/volko/Documents/2. Edication/1. cpp/test2/cmake-build-debug",
+		"source" : "C:/Users/volko/Documents/2. Edication/1. cpp/test2"
 	},
 	"version" : 
 	{
