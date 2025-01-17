@@ -148,7 +148,8 @@ CMakeFiles/test2.dir/main.cpp.obj: C:/Users/volko/Documents/2.\ Edication/1.\ cp
   C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/x86_64-w64-mingw32/include/time.h \
   C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/x86_64-w64-mingw32/include/vadefs.h \
   C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/x86_64-w64-mingw32/include/wchar.h \
-  C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/x86_64-w64-mingw32/include/wctype.h
+  C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/x86_64-w64-mingw32/include/wctype.h \
+  C:/Users/volko/Documents/2.\ Edication/1.\ cpp/test2/proba.h
 
 CMakeFiles/test2.dir/proba.cpp.obj: C:/Users/volko/Documents/2.\ Edication/1.\ cpp/test2/proba.cpp \
   C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward/binders.h \
@@ -592,6 +593,6 @@ C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/x86_64-w64-mingw32/include/w
 
 C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/x86_64-w64-mingw32/include/wctype.h:
 
-C:/Users/volko/Documents/2.\ Edication/1.\ cpp/test2/proba.cpp:
-
 C:/Users/volko/Documents/2.\ Edication/1.\ cpp/test2/proba.h:
+
+C:/Users/volko/Documents/2.\ Edication/1.\ cpp/test2/proba.cpp:
