@@ -9,20 +9,31 @@
 #include <vector>
 #include <complex>
 #include "proba.h"
+#include <numeric>
+#include <set>
 
 using namespace std;
+
+/*
+
+
+ */
+
+struct Descending {
+    bool operator()(int a, int b) const {
+        return a > b;  // Сортировка по убыванию
+    }
+};
 
 
 int main(int argc, char *argv[]) {
 
+    std::set<int, Descending> set1 = {1, 2, 3, 4, 5};
 
-    complex dd = {2.4, 55.6};
-    complex aa = {2.2323, 24.6};
 
-    dd -= aa;
-
-    cout << "real: " << dd.real() << endl;
-    cout << "imag: " << dd.imag() << endl;
+    for (auto it = set1.begin(); it != set1.end(); ++it) {
+        cout << "it: " << *it << endl;
+    }
 
 
     return 0;
