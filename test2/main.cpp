@@ -7,10 +7,9 @@
 
 #include <iostream>
 #include <vector>
-#include <complex>
-#include "proba.h"
 #include <numeric>
-#include <set>
+#include <chrono>
+#include <execution>
 
 using namespace std;
 
@@ -19,22 +18,50 @@ using namespace std;
 
  */
 
-struct Descending {
-    bool operator()(int a, int b) const {
-        return a > b;  // Сортировка по убыванию
-    }
-};
+#include <random>
+#include <ctime>
 
 
 int main(int argc, char *argv[]) {
 
-    std::set<int, Descending> set1 = {1, 2, 3, 4, 5};
 
+    const size_t testSize = 1'000'000;
+    const int iterationCount = 5;
 
-    for (auto it = set1.begin(); it != set1.end(); ++it) {
-        cout << "it: " << *it << endl;
+    random_device rd;
+    mt19937 mersenne(rd());
+
+    vector<int> integers(testSize);
+
+    for (auto &i: integers) {
+        i = static_cast<int>(rd());
     }
 
+    for (int i = 0; i < iterationCount; ++i) {
+        vector<int> sorted(integers);
+        const auto startTime = chrono::high_resolution_clock::now();
+
+        sort(sorted.begin(), sorted.end());
+
+        const auto endTime = chrono::high_resolution_clock::now();
+
+        cout << "Sequential sort: " << chrono::duration_cast<chrono::duration<int, milli>>(endTime - startTime).count()
+             << endl;
+    }
+
+
+    for (int i = 0; i < iterationCount; ++i) {
+        vector<int> sorted(integers);
+
+        const auto startTime = chrono::high_resolution_clock::now();
+
+        sort(execution::par, sorted.begin(), sorted.end());
+
+        const auto endTime = chrono::high_resolution_clock::now();
+
+        cout << "Parallel sort: " << chrono::duration_cast<chrono::duration<int, milli>>(endTime - startTime).count()
+             << endl;
+    }
 
     return 0;
 }
