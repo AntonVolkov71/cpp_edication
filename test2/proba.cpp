@@ -7,7 +7,5 @@ Test project
 #include "proba.h"
 #include <iostream>
 
-void func_out(const int& num) {
-    std::cout << "\t" << num << std::endl;
+using namespace std;
 
-}

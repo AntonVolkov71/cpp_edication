@@ -5,39 +5,47 @@
     09.01.2024
 */
 
+#include <algorithm>
 #include <iostream>
-#include <complex>
-#include <ctime>
 #include <vector>
+
 using namespace std;
 
-void show_vect(const char *it, const size_t size) {
-    for (size_t i = 0; i < size; i++, ++it) {
-        cout << *it << '\n';
+pair<bool, double> CalcMedian(vector<double> samples) {
+    if (samples.empty()) {
+        return {false, 0};
+    }
+
+    // верните {true, медиана}, если она существует,
+    // то есть вектор непустой,
+    // иначе - {false, 0}
+    // обратите внимание - вектор принимаем по значению,
+    // так как его придётся немного подпортить, чтобы вернуть ответ
+    sort(samples.begin(), samples.end());
+
+    if (samples.size() % 2 == 0) {
+        return {true, (samples[samples.size() / 2 - 1] + samples[samples.size() / 2]) / 2};
+    } else {
+        double median = samples[samples.size() / 2];
+
+        return {true, median};
     }
 }
 
-void reverse(const char *it_left_begin, char *it_right_end, const size_t size) {
-    for (size_t i = 0; i < size; ++i, ++it_left_begin, --it_right_end) {
-        *it_right_end = *it_left_begin;
+int main() {
+    /*
+        CalcMedian({1, 2, 3, 4}) == 2.5;
+        CalcMedian({1, 2, 3}) == 2;
+        CalcMedian({1, 2, 1000}) == 2; // медиана устойчива к небольшому числу сильно отклоняющихся от нормы значений
+    */
+    vector<double> samples = {1, 2, 3, 4};
+    // vector<double> samples = {1, 2, 3};
+    // vector<double> samples = {1, 2, 1000};
+
+    pair<bool, double> result = CalcMedian(samples);
+    if (result.first) {
+        cout << result.second << endl;
+    } else {
+        cout << "Empty vector"s << endl;
     }
-}
-
-void test2(char *&ch) {
-    cout << &ch << endl;
-    cout << *ch << endl;
-}
-
-
-int main(int argc, char *argv[]) {
-    const size_t size = 5;
-    char vect[size] = {'a', 'b', 'g', 'd', 'e'};
-    char vect2[size] = {};
-
-    show_vect(begin(vect), size);
-    cout << endl;
-
-    reverse(begin(vect), end(vect2) - 1, size);
-    show_vect(begin(vect2), size);
-    return 0;
 }
