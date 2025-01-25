@@ -88,7 +88,8 @@ public:
     vector<Document> FindTopDocuments(const string &query) const {
         vector<Document> documents = FindAllDocuments(query);
 
-        sort(execution::par, documents.begin(), documents.end(), [](const Document &lhs, const Document &rhs) {
+        sort(execution::par, documents.begin(), documents.end(), [](const Document &lhs, const Document &rhs)->bool
+            {
                  if (lhs.relevance == rhs.relevance) {
                      return lhs.id > rhs.id;
                  }

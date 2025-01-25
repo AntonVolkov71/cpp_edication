@@ -1,21 +1,35 @@
+#include <cstdint>
 #include <iostream>
-#include "proba.cpp";
+#include <limits>
 
 using namespace std;
 
+/*
+Задание
+Пощупайте переполнение типов int64_t и uint64_t на простом примере.
+
+Запомните в переменную min минимальное значение типа int64_t, а в переменную max — максимальное значение uint64_t.
+
+Никак не преобразуя типы, выведите 5 чисел, каждое на новой строке:
+
+min
+max
+Сумму min и max
+Удвоенный min
+Удвоенный max
+Посмотрите на вывод — один из результатов вычислений будет неожиданным.
+
+Подсказка
+Обратите внимание на типы min и max: они должны быть int64_t и uint64_t. Вычисляя сумму и произведение, не преобразуйте аргументы: суть задачи именно в демонстрации переполнения.
+*/
 
 int main() {
-    int number;
-    // TIP Press <shortcut actionId="RenameElement"/> when your caret is at the
-    // <b>lang</b> variable name to see how CLion can help you rename it.
-    cout << "Input number:" ;
+    const auto min = numeric_limits<int64_t>::min();
+    const auto max = numeric_limits<uint64_t>::max();
 
-    cin >> number;
-    // cin.ignore();
-    cout << number << endl;
-    cin.get();
-
-    func_out("Hello from main");
-    return 0;
+    cout << min << endl;
+    cout << max << endl;
+    cout << min + max << endl;
+    cout << 2 * min << endl;
+    cout << 2 * max << endl;
 }
-

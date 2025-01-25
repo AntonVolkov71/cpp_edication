@@ -7,11 +7,12 @@
     <option name="/Default/RiderDebugger/RiderRestoreDecompile/RestoreDecompileSetting/@EntryValue" value="false" type="bool" />
     <option name="/Default/Housekeeping/GlobalSettingsUpgraded/IsUpgraded/@EntryValue" value="true" type="bool" />
     <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
+    <option name="/Default/Housekeeping/OptionsDialog/SelectedPageId/@EntryValue" value="CppGeneralOptions" type="string" />
     <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexRemoved" />
   </component>
-  <component name="CMakePresetLoader"><![CDATA[{
-  "useNewFormat": true
-}]]></component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
   <component name="CMakeProjectFlavorService">
     <option name="flavorId" value="CMakePlainProjectFlavor" />
   </component>
@@ -30,16 +31,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c405d744-0693-494a-9e42-73737bc6f525" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../test2/cmake-build-debug/CMakeFiles/test2.dir/compiler_depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/../../../test2/cmake-build-debug/CMakeFiles/test2.dir/compiler_depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../test2/cmake-build-debug/CMakeFiles/test2.dir/compiler_depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../../test2/cmake-build-debug/CMakeFiles/test2.dir/compiler_depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../test2/cmake-build-debug/CMakeFiles/test2.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../../test2/cmake-build-debug/CMakeFiles/test2.dir/main.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../test2/cmake-build-debug/CMakeFiles/test2.dir/main.cpp.obj.d" beforeDir="false" afterPath="$PROJECT_DIR$/../../../test2/cmake-build-debug/CMakeFiles/test2.dir/main.cpp.obj.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../test2/cmake-build-debug/CMakeFiles/test2.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/../../../test2/cmake-build-debug/CMakeFiles/test2.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../test2/cmake-build-debug/CMakeFiles/test2.dir/proba.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../../test2/cmake-build-debug/CMakeFiles/test2.dir/proba.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../test2/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../test2/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../test2/cmake-build-debug/test2.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../../test2/cmake-build-debug/test2.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../test2/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../test2/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../test2/proba.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../../test2/proba.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,9 +52,9 @@
     <option name="minorVersion" value="3" />
     <option name="productBranch" value="Classic" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2rvJUPsKWv9YeJDKSXZgf7QQ1n7" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -72,22 +65,19 @@
     "RunOnceActivity.RadMigrateCodeStyle": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "RunOnceActivity.west.config.association.type.startup.service": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "Merging main",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "E:/Edication/cpp_edication/ya_practicum/1_sprint/3_less",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "E:/Edication/cpp_edication/ya_practicum/1_sprint/6_less/main.cpp",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="6_less" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="6_less" TARGET_NAME="6_less" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="6_less" RUN_TARGET_NAME="6_less">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -103,6 +93,7 @@
       <option name="presentableId" value="Default" />
       <updated>1737433630439</updated>
       <workItem from="1737433631752" duration="3000" />
+      <workItem from="1737787702530" duration="9000" />
     </task>
     <servers />
   </component>
