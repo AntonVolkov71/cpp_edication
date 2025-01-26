@@ -1,35 +1,58 @@
-#include <cstdint>
 #include <iostream>
-#include <limits>
+#include <map>
+#include <string>
+#include <vector>
 
 using namespace std;
 
 /*
 Задание
-Пощупайте переполнение типов int64_t и uint64_t на простом примере.
+Примените шаблонную функцию ComputeTermFreqs и определите, какое животное встречается наибольшее число раз. Животное в этом задании задаётся парой pair<string, int>.
 
-Запомните в переменную min минимальное значение типа int64_t, а в переменную max — максимальное значение uint64_t.
-
-Никак не преобразуя типы, выведите 5 чисел, каждое на новой строке:
-
-min
-max
-Сумму min и max
-Удвоенный min
-Удвоенный max
-Посмотрите на вывод — один из результатов вычислений будет неожиданным.
+Если максимальное число раз встречаются несколько животных, выведите наименьшего из них. Гарантируется, что вектор содержит хотя бы одно животное.
 
 Подсказка
-Обратите внимание на типы min и max: они должны быть int64_t и uint64_t. Вычисляя сумму и произведение, не преобразуйте аргументы: суть задачи именно в демонстрации переполнения.
+Вызовите ComputeTermFreqs для вектора animals, проитерируйтесь по результату и найдите ключ с наибольшим значением. Если очередной ключ имеет частоту, равную уже найденной максимальной, не переписывайте им ключ-ответ.
 */
+struct Animal {
+   string name;
+   int age;
+};
+
+template <typename Term>
+map<Term, int> ComputeTermFreqs(const vector<Term>& terms) {
+   map<Term, int> term_freqs;
+
+   for (const Term& term : terms) {
+      ++term_freqs[term];
+   }
+   return term_freqs;
+}
+
+Animal FindMaxFreqAnimal(const vector<Animal>& animals) {
+   int max_freq = 0;
+   Animal max_freq_animal= {"", 0};
+
+   // вот здесь вызываем шаблонную функцию
+   for (const auto& [animal, freq] : ComputeTermFreqs(animals)) {
+      if (freq > max_freq) {
+         max_freq = freq;
+         max_freq_animal = animal;
+      }
+   }
+   return max_freq_animal;
+}
 
 int main() {
-    const auto min = numeric_limits<int64_t>::min();
-    const auto max = numeric_limits<uint64_t>::max();
-
-    cout << min << endl;
-    cout << max << endl;
-    cout << min + max << endl;
-    cout << 2 * min << endl;
-    cout << 2 * max << endl;
+   const vector<Animal> animals = {
+      {"Murka"s, 5},
+      {"Belka"s, 6},
+      {"Murka"s, 7},
+      {"Murka"s, 5},
+      {"Belka"s, 6},
+  };
+   const Animal max_freq_animal = FindMaxFreqAnimal(animals);
+   cout << max_freq_animal.name << " "s
+        << max_freq_animal.age << endl;
 }
+

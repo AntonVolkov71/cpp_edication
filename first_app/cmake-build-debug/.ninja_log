@@ -1,0 +1,8 @@
+# ninja log v6
+1	158	7595808069489813	build.ninja	4337df858772b214
+221	295	7595807739420190	first_app.exe	1c89455e5eaedcdf
+0	221	7595807737200194	CMakeFiles/first_app.dir/main.cpp.obj	e098f144735ea181
+3	222	7595808234779065	CMakeFiles/first_app.dir/main.cpp.obj	e098f144735ea181
+222	266	7595808236969060	first_app.exe	1c89455e5eaedcdf
+2	221	7595809094258978	CMakeFiles/first_app.dir/main.cpp.obj	e098f144735ea181
+221	264	7595809096448975	first_app.exe	1c89455e5eaedcdf

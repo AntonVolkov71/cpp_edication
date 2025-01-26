@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.30)
 project(first_app)
 
+
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(first_app main.cpp
-        proba.cpp.h
-        proba.cpp
-        proba.h)
+add_compile_options(-Werror -Wall -Wextra)
+
+add_executable(first_app main.cpp)
