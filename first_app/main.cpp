@@ -1,58 +1,95 @@
 #include <iostream>
 #include <map>
+#include <set>
 #include <string>
 #include <vector>
 
 using namespace std;
 
 /*
-Задание
-Примените шаблонную функцию ComputeTermFreqs и определите, какое животное встречается наибольшее число раз. Животное в этом задании задаётся парой pair<string, int>.
+Задание 4
+Избавьтесь от дублирования кода. Вынесите общую функциональность вывода в шаблонную функцию Print, принимающую ссылку на поток вывода и объект шаблонного типа, элементы которого нужно вывести. Вызовите её из операторов вывода вектора и множества.
 
-Если максимальное число раз встречаются несколько животных, выведите наименьшего из них. Гарантируется, что вектор содержит хотя бы одно животное.
+Пример
 
+const set<string> cats = {"Мурка"s, "Белка"s, "Георгий"s, "Рюрик"s};
+cout << cats << endl;
+
+const vector<int> ages = {10, 5, 2, 12};
+cout << ages << endl;
+Вывод
+
+Белка, Георгий, Мурка, Рюрик
+10, 5, 2, 12
 Подсказка
-Вызовите ComputeTermFreqs для вектора animals, проитерируйтесь по результату и найдите ключ с наибольшим значением. Если очередной ключ имеет частоту, равную уже найденной максимальной, не переписывайте им ключ-ответ.
+Не забудьте назвать вспомогательную функцию Print, первым её аргументом сделать ссылку на поток, а вторым — контейнер шаблонного типа.
+
 */
-struct Animal {
-   string name;
-   int age;
-};
 
-template <typename Term>
-map<Term, int> ComputeTermFreqs(const vector<Term>& terms) {
-   map<Term, int> term_freqs;
+template<typename Key, typename Value>
+ostream &operator<<(ostream &out, const pair<Key, Value> &container) {
+    out <<"(" << container.first << "," << container.second << ")";
 
-   for (const Term& term : terms) {
-      ++term_freqs[term];
-   }
-   return term_freqs;
+    return out;
 }
 
-Animal FindMaxFreqAnimal(const vector<Animal>& animals) {
-   int max_freq = 0;
-   Animal max_freq_animal= {"", 0};
+template<typename Type>
+ostream & Print(ostream &out, const Type &container) {
+    bool first = true;
 
-   // вот здесь вызываем шаблонную функцию
-   for (const auto& [animal, freq] : ComputeTermFreqs(animals)) {
-      if (freq > max_freq) {
-         max_freq = freq;
-         max_freq_animal = animal;
-      }
-   }
-   return max_freq_animal;
+    for (const auto& element : container) {
+        if (!first) {
+            out << ", ";
+        }
+
+        first = false;
+        out << element;
+    }
+
+    return out;
 }
+
+template<typename Type>
+ostream &operator<<(ostream &out, const vector<Type> &container) {
+    out <<"[";
+    Print(out, container);
+    out <<"]";
+
+    return out;
+}
+
+template<typename Type>
+ostream &operator<<(ostream &out, const set<Type> &container) {
+    out <<"{";
+    Print(out, container);
+    out <<"}";
+
+    return out;
+}
+
+template<typename Key, typename Value>
+ostream &operator<<(ostream &out, const map<Key, Value> &container) {
+    out <<"<";
+    Print(out, container);
+    out <<">";
+
+    return out;
+}
+
 
 int main() {
-   const vector<Animal> animals = {
-      {"Murka"s, 5},
-      {"Belka"s, 6},
-      {"Murka"s, 7},
-      {"Murka"s, 5},
-      {"Belka"s, 6},
-  };
-   const Animal max_freq_animal = FindMaxFreqAnimal(animals);
-   cout << max_freq_animal.name << " "s
-        << max_freq_animal.age << endl;
-}
+    const vector<int> ages = {10, 5, 2, 12};
+    cout << "vector: "<< ages << endl;
 
+    const set<string> cats = {"Murka"s, "Belka"s, "Zyablik"s, "Tiblayk"s};
+    cout << "set: " << cats << endl;
+
+    const map<string, int> cat_ages = {
+        {"Murka"s, 10},
+        {"Belka"s, 5},
+        {"Zyablik"s, 2},
+        {"Tiblayk"s, 12}
+    };
+
+    cout << "map: "<< cat_ages << endl;
+}
