@@ -1,58 +1,67 @@
-#include <iostream>
-#include <map>
-#include <string>
+ad#include <iostream>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
-/*
-Задание
-Примените шаблонную функцию ComputeTermFreqs и определите, какое животное встречается наибольшее число раз. Животное в этом задании задаётся парой pair<string, int>.
-
-Если максимальное число раз встречаются несколько животных, выведите наименьшего из них. Гарантируется, что вектор содержит хотя бы одно животное.
-
-Подсказка
-Вызовите ComputeTermFreqs для вектора animals, проитерируйтесь по результату и найдите ключ с наибольшим значением. Если очередной ключ имеет частоту, равную уже найденной максимальной, не переписывайте им ключ-ответ.
-*/
-struct Animal {
-   string name;
-   int age;
+enum class AnimalSortKey {
+    AGE,     // по полю age
+    WEIGHT,  // по полю weight
+    RELATIVE_WEIGHT  // по weight / age
 };
 
-template <typename Term>
-map<Term, int> ComputeTermFreqs(const vector<Term>& terms) {
-   map<Term, int> term_freqs;
+struct Animal {
+    string name;
+    int age;
+    double weight;
+};
 
-   for (const Term& term : terms) {
-      ++term_freqs[term];
-   }
-   return term_freqs;
+void PrintNames(const vector<Animal>& animals) {
+    for (const Animal& animal : animals) {
+        cout << animal.name << ' ';
+    }
+    cout << endl;
+}
+auto key_mapper_func = [](const Animal& animal) { return animal.name; };
+
+// как написать SortBy?
+template <typename Container, typename KeyMapper>
+void SortBy(Container& container, KeyMapper key_mapper, bool is_reverse = false) {
+    sort(container.begin(), container.end(),[key_mapper, is_reverse](const auto &lhs, const auto &rhs){
+        return is_reverse
+        ? key_mapper(lhs) < key_mapper(rhs)
+        : key_mapper(lhs) > key_mapper(rhs);
+    });
 }
 
-Animal FindMaxFreqAnimal(const vector<Animal>& animals) {
-   int max_freq = 0;
-   Animal max_freq_animal= {"", 0};
-
-   // вот здесь вызываем шаблонную функцию
-   for (const auto& [animal, freq] : ComputeTermFreqs(animals)) {
-      if (freq > max_freq) {
-         max_freq = freq;
-         max_freq_animal = animal;
-      }
-   }
-   return max_freq_animal;
+void SortBy(vector<Animal>& animals, AnimalSortKey sort_key, bool reverse = false) {
+    switch (sort_key) {
+        case AnimalSortKey::AGE:
+            // возвращается void, но return помогает сразу выйти из функции
+            return SortBy(animals, [](const auto& x) { return x.age; }, reverse);
+        case AnimalSortKey::WEIGHT:
+            return SortBy(animals, [](const auto& x) { return x.weight; }, reverse);
+        case AnimalSortKey::RELATIVE_WEIGHT:
+            return SortBy(animals, [](const auto& x) { return x.weight / x.age; }, reverse);
+    }
 }
 
 int main() {
-   const vector<Animal> animals = {
-      {"Murka"s, 5},
-      {"Belka"s, 6},
-      {"Murka"s, 7},
-      {"Murka"s, 5},
-      {"Belka"s, 6},
-  };
-   const Animal max_freq_animal = FindMaxFreqAnimal(animals);
-   cout << max_freq_animal.name << " "s
-        << max_freq_animal.age << endl;
-}
+    vector<Animal> animals = {
+            {"Mura"s,   10, 5},
+            {"Bela"s,   5,  1.5},
+            {"Geor"s, 2,  4.5},
+            {"Ryri"s,   12, 3.1},
+    };
 
+    PrintNames(animals);
+
+    SortBy(animals, key_mapper_func);
+    PrintNames(animals);
+    SortBy(animals, [](const Animal& animal) { return animal.name; }, true);
+    PrintNames(animals);
+    SortBy(animals, [](const Animal& animal) { return -animal.weight; });
+    PrintNames(animals);
+    SortBy(animals, AnimalSortKey::RELATIVE_WEIGHT);
+    PrintNames(animals);
+}
