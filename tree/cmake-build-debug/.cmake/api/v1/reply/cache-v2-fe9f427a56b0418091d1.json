@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "e:/Edication/cpp_edication/test2/cmake-build-debug"
+			"value" : "c:/Users/volko/Documents/2. Edication/1. cpp/tree/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -575,7 +575,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "E:/Edication/cpp_edication/test2/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/volko/Documents/2. Edication/1. cpp/tree/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -647,7 +647,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "E:/Edication/cpp_edication/test2"
+			"value" : "C:/Users/volko/Documents/2. Edication/1. cpp/tree"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -659,7 +659,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Program Files (x86)/test2"
+			"value" : "C:/Program Files (x86)/tree"
 		},
 		{
 			"name" : "CMAKE_LINKER",
@@ -875,7 +875,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "test2"
+			"value" : "tree"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1282,7 +1282,7 @@
 			"value" : "TRUE"
 		},
 		{
-			"name" : "test2_BINARY_DIR",
+			"name" : "tree_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1291,10 +1291,10 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "E:/Edication/cpp_edication/test2/cmake-build-debug"
+			"value" : "C:/Users/volko/Documents/2. Edication/1. cpp/tree/cmake-build-debug"
 		},
 		{
-			"name" : "test2_IS_TOP_LEVEL",
+			"name" : "tree_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1306,7 +1306,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "test2_SOURCE_DIR",
+			"name" : "tree_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1315,7 +1315,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "E:/Edication/cpp_edication/test2"
+			"value" : "C:/Users/volko/Documents/2. Edication/1. cpp/tree"
 		}
 	],
 	"kind" : "cache",
