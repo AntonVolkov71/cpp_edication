@@ -4,12 +4,23 @@
 
 using namespace std;
 
-// Определяет, будет ли слово палиндромом
-// text может быть строкой, содержащей строчные символы английского алфавита и пробелы
-// Пустые строки и строки, состоящие только из пробелов, — это не палиндромы
-bool IsPalindrome(const string &text) {
-    bool res = false;
+/*
+Задание
+Напишите программу. Она должна определять, будет ли палиндромом текст, введённый пользователем в первой строке стандартного ввода. Гарантируется, что текст содержит только строчные символы английского алфавита и пробелы. Пробелы в любом количестве могут стоять в начале и в конце строки, а также между словами. Пусть программа их игнорирует. Если строка пустая или состоит только из пробелов, она не считается палиндромом.
 
+Примеры палиндромов: radar, never odd or even.
+
+Примеры строк, которые не будут палиндромами: apple, kick.
+
+Подсказка
+Составьте план тестирования до написания кода. Не пытайтесь сразу создать программу, решающую задачу полностью. Следуйте плану тестирования и двигайтесь маленькими итерациями:
+
+напишите код для прохождения теста в самой простой ситуации,
+доработайте программу так, чтобы она проходила два теста, затем три.
+При тестировании не забывайте обработать граничные условия — пустые строки и строки из одних пробелов.
+ */
+
+bool IsPalindrome(const string &text) {
     if (text.empty()) {
         return false;
     }
@@ -17,17 +28,16 @@ bool IsPalindrome(const string &text) {
     int left = 0;
     int right = static_cast<int>(text.size() - 1);
 
-//    if ((left == right) && (text[left] == text[right])) {
-//        return true;
-//    }
+    bool res = false;
+    while (left <= right) {
 
-    while (left != right) {
-        if (!text[left]) {
+        if (text[left] == ' ') {
             left++;
             continue;
         }
 
-        if (!text[right]) {
+        if (text[right] == ' ') {
+
             right--;
             continue;
         }
@@ -35,19 +45,16 @@ bool IsPalindrome(const string &text) {
         if (text[left] == text[right]) {
             left++;
             right--;
-            res= true;
+            res = true;
         } else {
             return false;
         }
     }
 
-    // Напишите недостающий код
     return res;
 }
 
 int main() {
-//    string text;
-//    getline(cin, text);
 
     map<string, bool> tests;
 
@@ -70,11 +77,6 @@ int main() {
                        : test.first + " Error";
 
         cout << isRes << endl;
-    }
 
-//    if (IsPalindrome(text)) {
-//        cout << "palindrome"s << endl;
-//    } else {
-//        cout << "not a palindrome"s << endl;
-//    }
+    }
 }
