@@ -1,80 +1,38 @@
+#include <cstdlib>
 #include <iostream>
 #include <string>
-#include <map>
 
 using namespace std;
 
-// Определяет, будет ли слово палиндромом
-// text может быть строкой, содержащей строчные символы английского алфавита и пробелы
-// Пустые строки и строки, состоящие только из пробелов, — это не палиндромы
-bool IsPalindrome(const string &text) {
-    bool res = false;
-
-    if (text.empty()) {
-        return false;
+template <typename T, typename U>
+void AssertEqualImpl(const T& t, const U& u, const string& t_str, const string& u_str, const string& file,
+                     const string& func, unsigned line, const string& hint) {
+    if (t != u) {
+        cout << boolalpha;
+        cout << file << "("s << line << "): "s << func << ": "s;
+        cout << "ASSERT_EQUAL("s << t_str << ", "s << u_str << ") failed: "s;
+        cout << t << " != "s << u << "."s;
+        if (!hint.empty()) {
+            cout << " Hint: "s << hint;
+        }
+        cout << endl;
+        abort();
     }
-
-    int left = 0;
-    int right = static_cast<int>(text.size() - 1);
-
-//    if ((left == right) && (text[left] == text[right])) {
-//        return true;
-//    }
-
-    while (left != right) {
-        if (!text[left]) {
-            left++;
-            continue;
-        }
-
-        if (!text[right]) {
-            right--;
-            continue;
-        }
-
-        if (text[left] == text[right]) {
-            left++;
-            right--;
-            res= true;
-        } else {
-            return false;
-        }
-    }
-
-    // Напишите недостающий код
-    return res;
 }
 
+#define ASSERT_EQUAL(a, b) AssertEqualImpl((a), (b), #a, #b, __FILE__, __FUNCTION__, __LINE__, ""s)
+#define ASSERT_EQUAL_HINT(a, b, hint) AssertEqualImpl((a), (b), #a, #b, __FILE__, __FUNCTION__, __LINE__, (hint))
+
+int Sum(int a, int b) {
+    // Ошибка допущена намеренно, чтобы продемонстрировать вывод информации об ошибке
+    return a + b + 1;
+}
+
+
 int main() {
-//    string text;
-//    getline(cin, text);
+    string hello = "hello"s;
+    ASSERT_EQUAL(static_cast<int>(hello.length()), 5);
 
-    map<string, bool> tests;
-
-    tests.insert({"", false});
-    tests.insert({"     ", false});
-    tests.insert({"anton", false});
-    tests.insert({"tonot", true});
-    tests.insert({"tt tt", true});
-    tests.insert({"tt t t   ", true});
-    tests.insert({"a", true});
-    tests.insert({"aa", true});
-    tests.insert({"  a   ", true});
-
-
-    for (const auto &test: tests) {
-        cout << "Test: ";
-
-        string isRes = IsPalindrome(test.first) == test.second
-                       ? "OK"
-                       : test.first + " Error";
-
-        cout << isRes << endl;
-    }
-
-//    if (IsPalindrome(text)) {
-//        cout << "palindrome"s << endl;
-//    } else {
-//        cout << "not a palindrome"s << endl;
-//    }
+    // Эта проверка не пройдёт
+    ASSERT_EQUAL_HINT(Sum(2, 2), 4, "Sum() must be correct"s);
 }
