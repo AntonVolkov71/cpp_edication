@@ -1,38 +1,57 @@
-#include <cstdlib>
+#include <algorithm>
 #include <iostream>
 #include <string>
+#include <vector>
+#include <set>
+#include <iterator>
 
 using namespace std;
 
-template <typename T, typename U>
-void AssertEqualImpl(const T& t, const U& u, const string& t_str, const string& u_str, const string& file,
-                     const string& func, unsigned line, const string& hint) {
-    if (t != u) {
-        cout << boolalpha;
-        cout << file << "("s << line << "): "s << func << ": "s;
-        cout << "ASSERT_EQUAL("s << t_str << ", "s << u_str << ") failed: "s;
-        cout << t << " != "s << u << "."s;
-        if (!hint.empty()) {
-            cout << " Hint: "s << hint;
-        }
-        cout << endl;
-        abort();
+/*
+Задание 2
+Напишите функцию-шаблон FindAndPrint, которая бы принимала контейнер и переменную типа элемента контейнера. Функция должна распечатать на первой строчке часть контейнера, предшествующую найденному элементу, а на второй строчке часть, последующую элементу, включая сам элемент. Если элемент в контейнере не найден, выведите весь контейнер одной строкой. Используйте ваше решение из предыдущей задачи для вывода результатов на экран.
+
+Пример вызова функции
+int main() {
+    set<int> test = {1, 1, 1, 2, 3, 4, 5, 5};
+    FindAndPrint(test, 3);
+    FindAndPrint(test, 0);
+}
+Пример вывода
+1 2
+3 4 5
+1 2 3 4 5
+Подсказка
+Вы можете применить функцию find или find_if стандартной библиотеки <algorithm>.*/
+
+
+
+template<typename It>
+void PrintRange(It begin, It end) {
+    cout << *begin;
+    for (++begin; begin != end; ++begin) {
+        cout << " "s << *begin;
     }
 }
 
-#define ASSERT_EQUAL(a, b) AssertEqualImpl((a), (b), #a, #b, __FILE__, __FUNCTION__, __LINE__, ""s)
-#define ASSERT_EQUAL_HINT(a, b, hint) AssertEqualImpl((a), (b), #a, #b, __FILE__, __FUNCTION__, __LINE__, (hint))
+template<typename Container, typename D>
+void FindAndPrint(const Container &container, const D& comp ){
+    auto findEl = find(container.begin(), container.end(), comp);
 
-int Sum(int a, int b) {
-    // Ошибка допущена намеренно, чтобы продемонстрировать вывод информации об ошибке
-    return a + b + 1;
+    if(findEl == container.end()){
+        PrintRange(container.begin(), container.end());
+    } else {
+        PrintRange(container.begin(), findEl);
+        cout << endl;
+        PrintRange(findEl, container.end());
+    }
+
+    cout << endl;
 }
 
-
 int main() {
-    string hello = "hello"s;
-    ASSERT_EQUAL(static_cast<int>(hello.length()), 5);
 
-    // Эта проверка не пройдёт
-    ASSERT_EQUAL_HINT(Sum(2, 2), 4, "Sum() must be correct"s);
+    set<int> test2 = {1, 1, 1, 2, 3, 4, 5, 5};
+    FindAndPrint(test2, 3);
+    FindAndPrint(test2, 0);
 }
