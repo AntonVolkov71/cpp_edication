@@ -2,56 +2,46 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <set>
-#include <iterator>
 
 using namespace std;
 
-/*
-Задание 2
-Напишите функцию-шаблон FindAndPrint, которая бы принимала контейнер и переменную типа элемента контейнера. Функция должна распечатать на первой строчке часть контейнера, предшествующую найденному элементу, а на второй строчке часть, последующую элементу, включая сам элемент. Если элемент в контейнере не найден, выведите весь контейнер одной строкой. Используйте ваше решение из предыдущей задачи для вывода результатов на экран.
 
-Пример вызова функции
-int main() {
-    set<int> test = {1, 1, 1, 2, 3, 4, 5, 5};
-    FindAndPrint(test, 3);
-    FindAndPrint(test, 0);
-}
-Пример вывода
-1 2
-3 4 5
-1 2 3 4 5
-Подсказка
-Вы можете применить функцию find или find_if стандартной библиотеки <algorithm>.*/
-
-
-
-template<typename It>
-void PrintRange(It begin, It end) {
-    cout << *begin;
-    for (++begin; begin != end; ++begin) {
-        cout << " "s << *begin;
+template <typename It>
+void PrintRange(It range_begin, It range_end) {
+    for (auto it = range_begin; it != range_end; ++it) {
+        cout << *it << " "s;
     }
-}
-
-template<typename Container, typename D>
-void FindAndPrint(const Container &container, const D& comp ){
-    auto findEl = find(container.begin(), container.end(), comp);
-
-    if(findEl == container.end()){
-        PrintRange(container.begin(), container.end());
-    } else {
-        PrintRange(container.begin(), findEl);
-        cout << endl;
-        PrintRange(findEl, container.end());
-    }
-
     cout << endl;
 }
 
-int main() {
+template <typename Container, typename Iterator>
+void EraseAndPrint(Container& container, Iterator position){
+    auto it_erase = container.erase(position);
+    PrintRange(container.begin(), position);
+    PrintRange(it_erase, container.end());
+}
 
-    set<int> test2 = {1, 1, 1, 2, 3, 4, 5, 5};
-    FindAndPrint(test2, 3);
-    FindAndPrint(test2, 0);
+template <typename Container>
+void EraseAndPrint(Container& container, int position){
+    auto it_erase = container.erase(container.begin() + position);
+    PrintRange(container.begin(), it_erase);
+    PrintRange(it_erase, container.end());
+}
+
+
+template <typename Container>
+void EraseAndPrint(Container& container, int erase_position, int add_erase_start, int add_erase_end ){
+    container.erase(container.begin() + erase_position);
+    PrintRange(container.begin(), container.end());
+
+    container.erase(container.begin() + add_erase_start, container.begin() + add_erase_end);
+    PrintRange(container.begin(), container.end());
+}
+
+
+
+int main() {
+    std::vector<int> v({1,2,3});
+    std::reverse(std::begin(v), std::end(v));
+    std::cout << v[0] << v[1] << v[2] << '\n';
 }

@@ -154,13 +154,4 @@ CMakeFiles/first_app.dir/main.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_uninitialized.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_vector.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h \
- C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/vector.tcc \
- C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/set \
- C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_tree.h \
- C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/aligned_buffer.h \
- C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/node_handle.h \
- C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_set.h \
- C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_multiset.h \
- C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/erase_if.h \
- C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iterator \
- C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stream_iterator.h
+ C:/Program\ Files/JetBrains/CLion\ 2024.3/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/vector.tcc
