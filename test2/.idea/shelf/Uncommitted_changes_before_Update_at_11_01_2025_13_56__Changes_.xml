@@ -1,0 +1,43 @@
+<changelist name="Uncommitted_changes_before_Update_at_11_01_2025_13_56_[Changes]" date="1736592980358" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_01_2025_13_56_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 11.01.2025 13:56 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/test2.exe" />
+    <option name="AFTER_PATH" value="cmake-build-debug/test2.exe" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_01_2025_13_56_[Changes]/test2.exe" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/3.30.5/CMakeDetermineCompilerABI_C.bin" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/3.30.5/CMakeDetermineCompilerABI_C.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_01_2025_13_56_[Changes]/CMakeDetermineCompilerABI_C.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/test2.dir/main.cpp.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/test2.dir/main.cpp.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_01_2025_13_56_[Changes]/main.cpp.obj" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/3.30.5/CompilerIdCXX/a.exe" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/3.30.5/CompilerIdCXX/a.exe" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_01_2025_13_56_[Changes]/a.exe" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/test2.dir/objects.a" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_01_2025_13_56_[Changes]/objects.a" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/3.30.5/CMakeDetermineCompilerABI_CXX.bin" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/3.30.5/CMakeDetermineCompilerABI_CXX.bin" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_01_2025_13_56_[Changes]/CMakeDetermineCompilerABI_CXX.bin" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/3.30.5/CompilerIdC/a.exe" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/3.30.5/CompilerIdC/a.exe" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_01_2025_13_56_[Changes]/a1.exe" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="cmake-build-debug/CMakeFiles/test2.dir/proba.cpp.obj" />
+    <option name="AFTER_PATH" value="cmake-build-debug/CMakeFiles/test2.dir/proba.cpp.obj" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_01_2025_13_56_[Changes]/proba.cpp.obj" />
+  </binary>
+</changelist>
