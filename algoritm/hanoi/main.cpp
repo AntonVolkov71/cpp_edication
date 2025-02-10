@@ -23,33 +23,65 @@ public:
     // обратите внимание на исключение, которое выбрасывается этим методом
     void AddToTop(int disk) {
         int top_disk_num = disks_.size() - 1;
+
         if (0 != disks_.size() && disk >= disks_[top_disk_num]) {
             throw invalid_argument("Невозможно поместить большой диск на маленький");
         } else {
             // допишите этот метод и используйте его в вашем решении
+            disks_.push_back(disk);
         }
     }
 
-    // вы можете дописывать необходимые для вашего решения методы
+    vector<int> GetDisks() const {
+        return disks_;
+    }
+
+    void MoveTopTo(Tower &dest) {
+        int top_disk_num = disks_.size() - 1;
+
+        try {
+            dest.AddToTop(disks_[top_disk_num]);
+        } catch (const invalid_argument &e) {
+            cout << e.what() << endl;
+            throw;
+        }
+
+        disks_.pop_back();
+    }
+
+    void MoveDisks(const int disks_num,  Tower &buffer, Tower &dest) {
+        if ( disks_num > 0) {
+            MoveDisks(disks_num - 1,  dest,buffer);
+            MoveTopTo(dest);
+             buffer.MoveDisks(disks_num - 1,  *this, dest);
+        }
+    }
 
 private:
     vector<int> disks_;
 
     // используем приватный метод FillTower, чтобы избежать дубликации кода
-    void FillTower(int disks_num) {
+    void FillTower(const int disks_num) {
         for (int i = disks_num; i > 0; i--) {
             disks_.push_back(i);
         }
     }
 };
 
-void SolveHanoi(vector<Tower>& towers) {
+ostream &operator<<(ostream &out, const Tower &tower) {
+    for (const auto &disk: tower.GetDisks()) {
+        out << disk << " ";
+    }
+    return out;
+}
+
+
+void SolveHanoi(vector<Tower> &towers) {
     int disks_num = towers[0].GetDisksNum();
 
-    // допишите функцию, чтобы на towers[0] было 0 дисков,
-    // на towers[1] 0 дисков,
-    // и на towers[2] было disks_num дисков
+    towers[0].MoveDisks(disks_num, towers[1], towers[2]);
 }
+
 
 int main() {
     SetConsoleOutputCP(CP_UTF8);
@@ -62,10 +94,22 @@ int main() {
     for (int i = 0; i < towers_num; ++i) {
         towers.push_back(0);
     }
+
     // добавим на первую башню три кольца
     towers[0].SetDisks(disks_num);
 
+    cout << "Before" << endl;
+    for (int i = 0; i < towers.size(); ++i) {
+        cout << i << ": " << towers[i] << endl;
+    }
+
     SolveHanoi(towers);
+
+    cout << "After" << endl;
+
+    for (int i = 0; i < towers.size(); ++i) {
+        cout << i << ": " << towers[i] << endl;
+    }
 }
 
 /*
