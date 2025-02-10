@@ -1,3 +1,0 @@
-C:/Users/volko/Documents/2. Edication/1. cpp/algoritm/hanoi/cmake-build-debug/CMakeFiles/hanoi.dir
-C:/Users/volko/Documents/2. Edication/1. cpp/algoritm/hanoi/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/volko/Documents/2. Edication/1. cpp/algoritm/hanoi/cmake-build-debug/CMakeFiles/rebuild_cache.dir
