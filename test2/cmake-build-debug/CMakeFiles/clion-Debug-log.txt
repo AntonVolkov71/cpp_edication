@@ -1,0 +1,1 @@
+CMakeLists.txt not found in C:\Users\volko\Documents\2. Edication\1. cpp\test2 Select CMakeLists.txt
