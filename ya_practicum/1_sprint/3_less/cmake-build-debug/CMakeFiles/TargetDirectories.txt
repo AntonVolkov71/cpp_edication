@@ -1,3 +1,0 @@
-E:/Edication/cpp_edication/ya_practicum/1_sprint/3_less/cmake-build-debug/CMakeFiles/3_less.dir
-E:/Edication/cpp_edication/ya_practicum/1_sprint/3_less/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/Edication/cpp_edication/ya_practicum/1_sprint/3_less/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,7 +1,0 @@
-# ninja log v6
-1	236	7601871146502676	CMakeFiles/first_app.dir/main.cpp.obj	571fc1d8b51558a2
-237	303	7601871148858838	first_app.exe	680ecb6ef455dd22
-2	218	7601871393603984	CMakeFiles/first_app.dir/main.cpp.obj	571fc1d8b51558a2
-218	260	7601871395764057	first_app.exe	680ecb6ef455dd22
-3	253	7601873682765798	CMakeFiles/first_app.dir/main.cpp.obj	571fc1d8b51558a2
-253	295	7601873685265762	first_app.exe	680ecb6ef455dd22

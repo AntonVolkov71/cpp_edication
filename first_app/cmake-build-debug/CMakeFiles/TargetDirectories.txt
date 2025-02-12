@@ -1,3 +1,0 @@
-E:/Edication/cpp_edication/first_app/cmake-build-debug/CMakeFiles/first_app.dir
-E:/Edication/cpp_edication/first_app/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/Edication/cpp_edication/first_app/cmake-build-debug/CMakeFiles/rebuild_cache.dir
