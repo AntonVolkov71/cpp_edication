@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 cmake-build-debug
 cmake-build-release
+=======
+cmake-build-release
+cmake-build-debug
+>>>>>>> 64a4101f30fb1de46127905b2f337e44d6619101
