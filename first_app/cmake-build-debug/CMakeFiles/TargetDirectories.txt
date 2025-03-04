@@ -1,0 +1,3 @@
+C:/Users/volko/Documents/2. Edication/1. cpp/first_app/cmake-build-debug/CMakeFiles/first_app.dir
+C:/Users/volko/Documents/2. Edication/1. cpp/first_app/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/volko/Documents/2. Edication/1. cpp/first_app/cmake-build-debug/CMakeFiles/rebuild_cache.dir
