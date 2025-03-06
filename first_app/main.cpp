@@ -1,72 +1,64 @@
-#include <cmath>
 #include <iostream>
 #include <vector>
-#include <iterator>
+#include <cstdint>
 #include <algorithm>
+#include <numeric>
+#include <map>
+#include <windows.h>
 
 using namespace std;
 
-template <typename RandomIt>
-pair<RandomIt, RandomIt> FindStartsWith(RandomIt range_begin, RandomIt range_end, char prefix) {
-   auto it = binary_search(range_begin, range_end, prefix);
+template<typename Iter>
+void PrintRange(Iter beg, Iter it_end) {
+    while (beg != it_end) {
+        cout << *beg << " ";
+        ++beg;
+    }
 
-   if(it == range_end){
-       auto it_lower = lower_bound(range_begin, range_end, prefix);
 
-       return make_pair(it_lower, range_end);
-   }
-
+    cout << endl;
 }
 
+template<typename Type>
+class Queue {
+    public:
+        void Push(const Type& el){
+
+        }
+private:
+        double
+};
 
 int main() {
-    const vector<string> sorted_strings = {"moscow", "murmansk", "vologda"};
+    SetConsoleOutputCP(CP_UTF8);
 
-    const auto m_result = FindStartsWith(begin(sorted_strings), end(sorted_strings), 'm');
-    for (auto it = m_result.first; it != m_result.second; ++it) {
-        cout << *it << " ";
+    Queue<int> queue;
+    vector<int> values(5);
+
+    // заполняем вектор для тестирования очереди
+    iota(values.begin(), values.end(), 1);
+    // перемешиваем значения
+    random_shuffle(values.begin(), values.end());
+
+    PrintRange(values.begin(), values.end());
+
+    cout << "Заполняем очередь"s << endl;
+
+    // заполняем очередь и выводим элемент в начале очереди
+    for (int i = 0; i < 5; ++i) {
+        queue.Push(values[i]);
+        cout << "Вставленный элемент "s << values[i] << endl;
+        cout << "Первый элемент очереди "s << queue.Front() << endl;
     }
-    cout << endl;
 
-    const auto p_result = FindStartsWith(begin(sorted_strings), end(sorted_strings), 'p');
-    cout << (p_result.first - begin(sorted_strings)) << " " << (p_result.second - begin(sorted_strings)) << endl;
+    cout << "Вынимаем элементы из очереди"s << endl;
 
-    const auto z_result = FindStartsWith(begin(sorted_strings), end(sorted_strings), 'z');
-    cout << (z_result.first - begin(sorted_strings)) << " " << (z_result.second - begin(sorted_strings)) << endl;
-
+    // выводим элемент в начале очереди и вытаскиваем элементы по одному
+    while (!queue.IsEmpty()) {
+        // сначала будем проверять начальный элемент, а потом вытаскивать,
+        // так как операция Front на пустой очереди не определена
+        cout << "Будем вынимать элемент "s << queue.Front() << endl;
+        queue.Pop();
+    }
     return 0;
 }
-
-//set<int>::const_iterator FindNearestElement(const set<int> &cont, int border) {
-//    if (cont.empty()) {
-//        return cont.end();
-//    }
-//
-//    auto it = cont.lower_bound(border);
-//
-//    if (it != cont.begin()) {
-//        auto it_prev = prev(it, 1);
-//
-//        if (abs(border - *it_prev) > abs(border - *it)) {
-//            return it;
-//        }
-//
-//        return it_prev;
-//    }
-//
-//    return it;
-//};
-
-
-
-//int main() {
-//    set<int> numbers = {1, 4, 6};
-//    cout << *FindNearestElement(numbers, 0) << " " << *FindNearestElement(numbers, 3) << " "
-//         << *FindNearestElement(numbers, 5) << " " << *FindNearestElement(numbers, 6) << " "
-//         << *FindNearestElement(numbers, 100) << endl;
-//
-//    set<int> empty_set;
-//
-//    cout << (FindNearestElement(empty_set, 8) == end(empty_set)) << endl;
-//    return 0;
-//}
