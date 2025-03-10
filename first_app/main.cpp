@@ -6,12 +6,7 @@
 using namespace std;
 
 vector<int> ReverseVector(const vector<int> &source_vector) {
-    vector<int> res;
-    for (int i: source_vector) {
-        res.insert(res.begin(), i);
-    }
-
-    return res;
+    return {source_vector.rbegin(), source_vector.rend()};
 }
 
 int CountPops(const vector<int> &source_vector, int begin, int end) {
@@ -27,12 +22,14 @@ int CountPops(const vector<int> &source_vector, int begin, int end) {
 }
 
 void AppendRandom(vector<int> &v, int n) {
-    for (int i = 0; i < n; ++i) {
-        // получаем случайное число с помощью функции rand.
-        // с помощью (rand() % 2) получим целое число в диапазоне 0..1.
-        // в C++ имеются более современные генераторы случайных чисел,
-        // но в данном уроке не будем их касаться
-        v.push_back(rand() % 2);
+    for (int i = 0; i < n; i += 15) {
+        int number = rand();
+        int count = min(15, n - 1);
+
+        for (int j = 0; j < count; ++j) {
+            v.push_back((number >> j) % 2);
+
+        }
     }
 }
 
@@ -46,7 +43,7 @@ void Operate() {
 
         // операция << для целых чисел это сдвиг всех бит в двоичной
         // записи числа. Запишем с её помощью число 2 в степени 17 (131072)
-        static const int N = 1 << 17;
+        static const int N = 1 << 25;
 
         {
             LOG_DURATION("Append random"s);
@@ -61,9 +58,15 @@ void Operate() {
 
         {
             LOG_DURATION("Counting"s);
+            int prev_sum = 0;
+            int prev_i =  0;
+
             for (int i = 1, step = 1; i <= N; i += step, step *= 2) {
-                double rate = CountPops(reversed_bits, 0, i) * 100. / i;
-                cout << "After "s << i << " bits we found "s << rate << "% pops"s << endl;
+                const int sum = prev_sum = CountPops(reversed_bits, prev_i, i);
+                cout << "After "s << i << " digits we found "s << (sum * 100. / i) << "% pops"s << endl;
+
+                prev_i = i;
+                prev_sum = sum;
             }
         }
     }
