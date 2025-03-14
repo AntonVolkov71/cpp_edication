@@ -1,34 +1,36 @@
-#include "log_duration.h"
-
 #include <iostream>
 
 using namespace std;
 
-class StreamUntier {
-public:
-    // добавьте конструктор, деструктор
-    // и дополнительные поля класса при необходимости
-    StreamUntier(istream &in) : in_(in) {
-        tied_before_ = in_.tie(nullptr);
+template<typename F>
+int FindFloor(int n, F drop) {
+    int a = 1, b = n;
+
+    while (a != b) {
+        int m = (a + b) / 2;
+
+        if (drop(m)) {
+            b = m;
+        } else {
+            a = m + 1;
+        }
     }
 
-    ~StreamUntier() {
-        in_.tie(tied_before_);
-    }
-
-private:
-    ostream *tied_before_;
-    istream &in_;
-};
+    return a;
+}
 
 int main() {
-    LOG_DURATION("\\n with tie"s);
+    int n, t;
+    cout << "Enter n and target floor number: "s << endl;
+    cin >> n >> t;
 
-    StreamUntier guard(cin);
-    int i;
-    while (cin >> i) {
-        cout << i * i << "\n"s;
-    }
+    int count = 0;
+    int found = FindFloor(n, [t, &count](int f) {
+        ++count;
+        return f >= t;
+    });
+
+    cout << "Found floor "s << found << " after "s << count << " drops"s;
 
     return 0;
 }
