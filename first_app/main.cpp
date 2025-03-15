@@ -1,44 +1,32 @@
-#include <cassert>
-#include <stack>
+#include <algorithm>
+#include <cmath>
+#include <cstdint>
+#include <iostream>
+#include <random>
+#include <vector>
 
 using namespace std;
 
-// моделируем очередь с помощью двух стеков
-template <class T>
-class QueueFromStack {
-public:
-    void Push(const T& e) {
-        stack1_.push(e);
-    }
-
-    T Pop() {
-        if (stack2_.empty()) {
-            while (!stack1_.empty()) {
-                stack2_.push(stack1_.top());
-                stack1_.pop();
-            }
-        }
-
-        assert(!stack2_.empty());
-
-        T top = stack2_.top();
-        stack2_.pop();
-        return top;
-    }
-
-private:
-    stack<T> stack1_;
-    stack<T> stack2_;
-};
+int EffectiveCount(const vector<int>& v, int n, int i) {
+    // место для вашего решения
+}
 
 int main() {
-    QueueFromStack<int> q;
-    q.Push(1);
-    q.Push(2);
-    q.Push(3);
-    q.Push(4);
-    assert(q.Pop() == 1);
-    assert(q.Pop() == 2);
-    assert(q.Pop() == 3);
-    assert(q.Pop() == 4);
+    static const int NUMBERS = 1'000'000;
+    static const int MAX = 1'000'000'000;
+
+    mt19937 r;
+    uniform_int_distribution<int> uniform_dist(0, MAX);
+
+    vector<int> nums;
+    for (int i = 0; i < NUMBERS; ++i) {
+        int random_number = uniform_dist(r);
+        nums.push_back(random_number);
+    }
+    sort(nums.begin(), nums.end());
+
+    int i;
+    cin >> i;
+    int result = EffectiveCount(nums, MAX, i);
+    cout << "Total numbers before "s << i << ": "s << result << endl;
 }
