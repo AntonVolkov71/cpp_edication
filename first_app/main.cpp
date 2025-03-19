@@ -1,32 +1,17 @@
-#include <algorithm>
-#include <cmath>
-#include <cstdint>
-#include <iostream>
-#include <random>
-#include <vector>
-
-using namespace std;
-
-int EffectiveCount(const vector<int>& v, int n, int i) {
-    // место для вашего решения
-}
+#include <cassert>
+#include <string>
 
 int main() {
-    static const int NUMBERS = 1'000'000;
-    static const int MAX = 1'000'000'000;
+    using namespace std;
 
-    mt19937 r;
-    uniform_int_distribution<int> uniform_dist(0, MAX);
+    string practicum = "Practicum"s;
 
-    vector<int> nums;
-    for (int i = 0; i < NUMBERS; ++i) {
-        int random_number = uniform_dist(r);
-        nums.push_back(random_number);
-    }
-    sort(nums.begin(), nums.end());
+    string* paracticum_ptr = &practicum;
 
-    int i;
-    cin >> i;
-    int result = EffectiveCount(nums, MAX, i);
-    cout << "Total numbers before "s << i << ": "s << result << endl;
+    // Прежде чем обратиться к методу length, разыменуем указатель
+    assert((*paracticum_ptr).length() == 9);
+
+    // Также обращение к полям и методам структур и классов
+    // доступно при помощи операции ->
+    assert(paracticum_ptr->substr(2, 3) == "act"s);
 }
