@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.30"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "sprint_2_J_list_queue",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "sprint_2_J_list_queue::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sprint_2_J_list_queue-Debug-54b7421d92c32f3e6a6b.json",
+					"name" : "sprint_2_J_list_queue",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/3. Edication/2. CPP/algoritm/practice/ya_contest/data_structures/sprint_2_J_list_queue/cmake-build-debug",
+		"source" : "D:/3. Edication/2. CPP/algoritm/practice/ya_contest/data_structures/sprint_2_J_list_queue"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

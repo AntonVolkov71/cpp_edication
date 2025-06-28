@@ -1,17 +1,29 @@
-#include <cassert>
-#include <string>
+/*
+Дана строка s, найдите длину самой длинной из них. подстрокабез повторяющихся символов.
 
-int main() {
-    using namespace std;
 
-    string practicum = "Practicum"s;
 
-    string* paracticum_ptr = &practicum;
+Пример 1:
 
-    // Прежде чем обратиться к методу length, разыменуем указатель
-    assert((*paracticum_ptr).length() == 9);
+Ввод: s = "abcabcbb"
+ Вывод: 3
+ Пояснение: Ответ: "abc", длина которого равна 3.
+Пример 2:
 
-    // Также обращение к полям и методам структур и классов
-    // доступно при помощи операции ->
-    assert(paracticum_ptr->substr(2, 3) == "act"s);
-}
+Ввод: s = "bbbbb"
+ Вывод: 1
+ Пояснение: Ответ: "b", длина которого равна 1.
+Пример 3:
+
+Ввод: s = "pwwkew"
+ Вывод: 3
+ Пояснение: Ответ: "wke", длина которого равна 3.
+Обратите внимание, что ответ должен быть подстрокой, «pwke» — это подпоследовательность, а не подстрока.
+
+ */
+
+class Solution {
+public:
+ int lengthOfLongestSubstring(string s) {
+ }
+};
