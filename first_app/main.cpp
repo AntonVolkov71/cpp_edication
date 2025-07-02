@@ -1,29 +1,43 @@
-/*
-Дана строка s, найдите длину самой длинной из них. подстрокабез повторяющихся символов.
+#include <filesystem>
+#include <fstream>
+#include <iostream>
+#include <string_view>
 
+using namespace std;
+using filesystem::path;
 
+path operator""_p(const char* data, std::size_t sz) {
+    return path(data, data + sz);
+}
 
-Пример 1:
+void PrintFileOrFolder(filesystem::file_status status) {
+    if (status.type() == filesystem::file_type::regular) {
+        cout << "Путь указывает на файл"sv << endl;
+    } else if (status.type() == filesystem::file_type::directory) {
+        cout << "Путь указывает на папку"sv << endl;
+    } else {
+        cout << "Путь указывает другой объект"sv << endl;
+    }
+}
+void PrintFileOrFolder(filesystem::path p) {
+    error_code err;
+    auto status = filesystem::status(p, err);
 
-Ввод: s = "abcabcbb"
- Вывод: 3
- Пояснение: Ответ: "abc", длина которого равна 3.
-Пример 2:
+    if (err) {
+        return;
+    }
 
-Ввод: s = "bbbbb"
- Вывод: 1
- Пояснение: Ответ: "b", длина которого равна 1.
-Пример 3:
+    PrintFileOrFolder(status);
+}
 
-Ввод: s = "pwwkew"
- Вывод: 3
- Пояснение: Ответ: "wke", длина которого равна 3.
-Обратите внимание, что ответ должен быть подстрокой, «pwke» — это подпоследовательность, а не подстрока.
+int main() {
+    path p = "a"_p / "folder"_p;
+    filesystem::create_directories(p);
+    filesystem::create_directory(p / "subfolder"_p);
+    std::ofstream(p / "file.txt"_p) << "File content"sv;
 
- */
-
-class Solution {
-public:
- int lengthOfLongestSubstring(string s) {
- }
-};
+    for (const auto& dir_entry: filesystem::directory_iterator(p)) {
+        PrintFileOrFolder(dir_entry.path());
+        PrintFileOrFolder(dir_entry.status());
+    }
+}
