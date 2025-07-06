@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.30"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "sprint_2_E_all_contrast",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "sprint_2_E_all_contrast::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sprint_2_E_all_contrast-Debug-5fc75c28d2ab2ded1000.json",
+					"name" : "sprint_2_E_all_contrast",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "E:/Edication/cpp_edication/algoritm/practice/ya_contest/data_structures/sprint_2_E_all_contrast/cmake-build-debug",
+		"source" : "E:/Edication/cpp_edication/algoritm/practice/ya_contest/data_structures/sprint_2_E_all_contrast"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

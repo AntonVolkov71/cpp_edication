@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2024.3\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\sprint_2_F_stack_max.dir/objects.a
+C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\ar.exe qc CMakeFiles\sprint_2_F_stack_max.dir/objects.a @CMakeFiles\sprint_2_F_stack_max.dir\objects1.rsp
+C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\sprint_2_F_stack_max.dir/objects.a -Wl,--no-whole-archive -o sprint_2_F_stack_max.exe -Wl,--out-implib,libsprint_2_F_stack_max.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\sprint_2_F_stack_max.dir\linkLibs.rsp
