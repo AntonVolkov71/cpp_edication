@@ -1,3 +1,0 @@
-D:/3. Edication/2. CPP/algoritm/practice/ya_contest/data_structures/sprint_2_J_limitied_queue/cmake-build-debug/CMakeFiles/sprint_2_J_list_queue.dir
-D:/3. Edication/2. CPP/algoritm/practice/ya_contest/data_structures/sprint_2_J_limitied_queue/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/3. Edication/2. CPP/algoritm/practice/ya_contest/data_structures/sprint_2_J_limitied_queue/cmake-build-debug/CMakeFiles/rebuild_cache.dir

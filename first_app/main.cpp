@@ -1,29 +1,22 @@
-/*
-Дана строка s, найдите длину самой длинной из них. подстрокабез повторяющихся символов.
+#include <iostream>
+using namespace std;
 
 
 
-Пример 1:
+void gen_binary(int n, string prefix, int left) {
+    if (n == 0) {
+        cout << string(left++, ' ') << prefix << endl;
 
-Ввод: s = "abcabcbb"
- Вывод: 3
- Пояснение: Ответ: "abc", длина которого равна 3.
-Пример 2:
+        return;
+    } else {
+        cout <<string(left++, ' ') <<  prefix << endl;
 
-Ввод: s = "bbbbb"
- Вывод: 1
- Пояснение: Ответ: "b", длина которого равна 1.
-Пример 3:
+//        gen_binary(n - 1, prefix + "0",left);
+        gen_binary(n - 1, prefix + "1", left);
+    }
+}
 
-Ввод: s = "pwwkew"
- Вывод: 3
- Пояснение: Ответ: "wke", длина которого равна 3.
-Обратите внимание, что ответ должен быть подстрокой, «pwke» — это подпоследовательность, а не подстрока.
-
- */
-
-class Solution {
-public:
- int lengthOfLongestSubstring(string s) {
- }
-};
+int main() {
+    gen_binary(3, "", 0);
+    return 0;
+}
